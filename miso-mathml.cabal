@@ -2,12 +2,27 @@ cabal-version:          3.0
 name:                   miso-mathml
 version:                0.1
 
+common warnings
+  ghc-options:
+    -funbox-strict-fields -O2 -ferror-spans -fspecialise-aggressively -Wall
+
+common wasm
+  if arch(wasm32)
+    ghc-options:
+      -no-hs-main -optl-mexec-model=reactor "-optl-Wl,--export=hs_start"
+    cpp-options:
+      -DWASM
+
 executable app
-  hs-source-dirs:       src
-  main-is:              Main.hs
-  build-depends:        base, miso
-  default-language:     GHC2021
-  ghc-options:          -Wall -no-hs-main -optl-mexec-model=reactor "-optl-Wl,--export=hs_start" -ddump-splices
-  cpp-options:          -DWASM
-  default-extensions:   CPP TemplateHaskell
- 
+  import:
+    wasm, warnings
+  hs-source-dirs:
+    src
+  main-is:
+    Main.hs
+  build-depends:
+    base, miso
+  default-language:
+    GHC2021
+  default-extensions:
+    CPP TemplateHaskell
