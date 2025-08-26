@@ -1,0 +1,97 @@
+:root {
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --dark: #2c3e50;
+  --light: #ecf0f1;
+  --accent: #e74c3c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-weight: normal;
+}
+
+.math-card {
+  background: var(--light);
+  border-left: 4px solid var(--primary);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.math-title {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.math-container {
+  overflow-x: auto;
+  padding: 15px;
+  background: white;
+  border-radius: 4px;
+  margin: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.explanation {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #bdc3c7;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.math-equation {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .math-container {
+    padding: 10px;
+  }
+}
