@@ -4,9 +4,11 @@
 -----------------------------------------------------------------------------
 module Main where
 -----------------------------------------------------------------------------
-import Miso
-import Miso.Mathml
-import Miso.String
+import           Miso
+import           Miso.Mathml
+import qualified Miso.Html.Element as H
+import qualified Miso.Html.Property as P
+import           Miso.String
 -----------------------------------------------------------------------------
 #if defined(wasm32_HOST_ARCH)
 foreign export javascript "hs_start" main :: IO ()
@@ -23,7 +25,8 @@ main = run $ startApp vcomp
     vcomp = component () noop $ \() ->
       div_
         [class_ "container"]
-        [ header_
+        [ githubStar
+        , header_
             []
             [ h1_ [] ["Mathematical Expressions with MathML and miso 🍜 "]
             , p_
@@ -186,4 +189,16 @@ close_ = textProp "close"
 -----------------------------------------------------------------------------
 open_ :: MisoString -> Attribute action
 open_ = textProp "open"
+-----------------------------------------------------------------------------
+githubStar :: View model action
+githubStar = H.iframe_
+    [ P.title_ "GitHub"
+    , P.height_ "30"
+    , P.width_ "170"
+    , textProp "scrolling" "0"
+    , textProp "frameborder" "0"
+    , P.src_
+      "https://ghbtns.com/github-btn.html?user=haskell-miso&repo=miso-mathml&type=star&count=true&size=large"
+    ]
+    []
 -----------------------------------------------------------------------------
