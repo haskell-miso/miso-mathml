@@ -139,11 +139,10 @@ main = run $ startApp vcomp
                     ]
                     [ mi_ [] ["A"]
                     , mo_ [] ["="]
-                    , mfenced_
-                        [ close_ "]"
-                        , open_ "["
-                        ]
-                        [ mtable_
+                    , mrow_
+                      []
+                        [ mo_ [] [ "[" ]
+                        , mtable_
                             []
                             [ mtr_
                                 []
@@ -164,6 +163,7 @@ main = run $ startApp vcomp
                                 , mtd_ [] [mn_ [] ["9"]]
                                 ]
                             ]
+                        , mo_ [] [ "]" ]
                         ]
                     ]
                 ]
