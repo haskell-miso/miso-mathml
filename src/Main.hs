@@ -9,6 +9,7 @@ import           Miso.Mathml
 import           Miso.Mathml.Property
 import qualified Miso.Html.Element as H
 import qualified Miso.Html.Property as P
+import qualified Miso.CSS as CSS
 -----------------------------------------------------------------------------
 #if defined(wasm32_HOST_ARCH)
 foreign export javascript "hs_start" main :: IO ()
@@ -28,7 +29,7 @@ main = run $ startApp vcomp
         [ githubStar
         , H.header_
             []
-            [ H.h1_ [] ["Mathematical Expressions with MathML and miso 🍜 "]
+            [ H.h1_ [ CSS.style_ [ CSS.fontFamily_ "monospace" ] ] ["🍜 ➕ miso-mathml "]
             , H.p_
                 [P.class_ "subtitle"]
                 [ "Modern examples of mathematical notation on the web"
