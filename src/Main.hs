@@ -29,7 +29,7 @@ main = run $ startApp vcomp
         [ githubStar
         , H.header_
             []
-            [ H.h1_ [ CSS.style_ [ CSS.fontFamily_ "monospace" ] ] ["🍜 ➕ miso-mathml "]
+            [ H.h1_ [ CSS.style_ [ CSS.fontFamily "monospace" ] ] ["🍜 ➕ miso-mathml "]
             , H.p_
                 [P.class_ "subtitle"]
                 [ "Modern examples of mathematical notation on the web"
