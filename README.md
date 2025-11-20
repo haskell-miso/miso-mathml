@@ -3,7 +3,7 @@
 See [live](https://mathml.haskell-miso.org)
 
 <a href="https://mathml.haskell-miso.org">
-  <img width="779" height="416" alt="image" src="https://github.com/user-attachments/assets/470e5782-d3ef-4885-8924-8837dd21f47f" />
+<img width="568" height="97" alt="image" src="https://github.com/user-attachments/assets/4eb46f3b-adf1-4353-bdd6-09bad6e9acc4" />
 </a>
 
 ## Build and run
@@ -15,4 +15,3 @@ nix develop .#wasm
 make
 make serve
 ```
-
