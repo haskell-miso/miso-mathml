@@ -29,7 +29,7 @@ main = run $ startApp vcomp
         [ githubStar
         , H.header_
             []
-            [ H.h1_ [ CSS.style_ [ CSS.fontFamily "monospace" ] ] ["🍜 ➕ miso-mathml "]
+            [ H.h1_ [ CSS.style_ [ CSS.fontFamily "monospace" ] ] ["🍜 ➕ ", H.a_ [ P.href_ "https://github.com/haskell-miso/miso-mathml" ] [ "miso-mathml" ] ]
             , H.p_
                 [P.class_ "subtitle"]
                 [ "Modern examples of mathematical notation on the web"
