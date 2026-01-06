@@ -11,7 +11,7 @@ import qualified Miso.Html.Element as H
 import qualified Miso.Html.Property as P
 import qualified Miso.CSS as CSS
 -----------------------------------------------------------------------------
-#if defined(wasm32_HOST_ARCH)
+#ifdef WASM
 foreign export javascript "hs_start" main :: IO ()
 #endif
 -----------------------------------------------------------------------------
