@@ -17,7 +17,7 @@ foreign export javascript "hs_start" main :: IO ()
 -----------------------------------------------------------------------------
 -- | Entry point for a miso application
 main :: IO ()
-main = run $ startApp vcomp
+main = startApp vcomp
 #ifndef WASM
   { styles = [ Href "assets/style.css" ]
   }
